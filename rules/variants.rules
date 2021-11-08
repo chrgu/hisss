@@ -1,0 +1,37 @@
+#-*- mode: Snakemake -*-
+
+rule generate_bcf:
+	input:
+		str(OUTPUT_DIR+"/alignments/{sample}.sorted.bam")
+	output:
+		str(OUTPUT_DIR+"/variants/{sample}.call.bcf")
+	params:
+		pileup = str(TARGETS)
+	threads:
+		1
+	shell:
+		"""
+		bcftools mpileup --threads {threads} -f {params.pileup} {input} | bcftools call -m --ploidy 1 --threads {threads} -O b > {output}
+		"""
+
+rule filter_bcf:
+	input:
+		str(OUTPUT_DIR+"/variants/{sample}.call.bcf")
+	output:
+		str(OUTPUT_DIR+"/variants/{sample}.filteredcall.bcf")
+	params:
+		filter = str(config['bcf']['filter'])
+	shell:
+		"""
+		bcftools view -i {params.filter:q} -O b {input} > {output}
+		"""
+	
+rule pull_variants:
+	input:
+		str(OUTPUT_DIR+"/variants/{sample}.filteredcall.bcf")
+	output:
+		str(OUTPUT_DIR+"/variants/{sample}_variants.tsv")
+	shell:
+		"""
+		bcftools query -f '%CHROM\t%POS\t%REF\t%ALT\t%TYPE\t%DP\t%MQ\n' {input} > {output}
+		"""

@@ -46,12 +46,15 @@ include: "rules/align_" + un + "paired.rules"
 
 include: "rules/process_alignment.rules"
 
+include: "rules/variants.rules"
+
 include: "rules/summary.rules"
 
 include: "rules/plot.rules"
 
 rule all:
 	input:
+		expand(rules.pull_variants.output, sample = config['samples']),
 		rules.all_summary.output,
-		rules.all_plot.output
+		rules.all_plot.output,
 

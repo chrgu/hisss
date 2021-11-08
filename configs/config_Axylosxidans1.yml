@@ -1,0 +1,15 @@
+io:
+  # directories
+  data: "/home/chgu/projects/micu/bsi/ref_meta/Axylosxidans/hisss/data"
+  output: "/home/chgu/projects/micu/bsi/ref_meta/Axylosxidans/hisss/results1"
+
+  # options
+  download: False
+  paired: True
+
+
+align:
+  targets: "/home/chgu/projects/micu/bsi/ref_meta/Axylosxidans/hisss/0_contigs/GCF_000165835.1_ASM16583v1_genomic.fasta"
+
+samples:
+  chr048_44309: ['chr048_44309_1.fastq.gz', 'chr048_44309_2.fastq.gz']

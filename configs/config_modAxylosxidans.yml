@@ -1,0 +1,20 @@
+io:
+  # directories
+  data: "/home/chgu/projects/micu/bsi/ref_meta/Axylosxidans/hisss/data"
+  output: "/home/chgu/projects/micu/bsi/ref_meta/Axylosxidans/hisss/results_scaf"
+
+  # options
+  download: False
+  paired: True
+
+
+align:
+  targets: "/home/chgu/projects/micu/bsi/ref_meta/Axylosxidans/hisss/0_contigs/chr048A_S11_scaf.fasta"
+
+bcf:
+  filter: "DP>7&QUAL>30"
+
+
+samples:
+  chr048_44309: ['chr048_44309_1.fastq.gz', 'chr048_44309_2.fastq.gz']
+

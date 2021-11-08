@@ -1,0 +1,15 @@
+io:
+  # directories
+  data: "/home/chgu/projects/micu/bsi/ref_meta/Axylosxidans/hisss/data"
+  output: "/home/chgu/projects/micu/bsi/ref_meta/Axylosxidans/hisss/results3"
+
+  # options
+  download: False
+  paired: True
+
+
+align:
+  targets: "/home/chgu/projects/micu/bsi/ref_meta/Axylosxidans/hisss/ref/test_ref.fasta"
+
+samples:
+  chr048_44309: ['chr048_44309_1.fastq.gz', 'chr048_44309_2.fastq.gz']
