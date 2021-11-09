@@ -2,30 +2,30 @@
 
 rule mapping_stats:
 	input: 
-		bam = str(OUTPUT_DIR+"/alignments/{sample}.sorted.bam"),
-		idx = str(OUTPUT_DIR+"/alignments/{sample}.sorted.bam.bai")
+		bam = str(OUTPUT_DIR+"/alignments/{ref}/{sample}.sorted.bam"),
+		idx = str(OUTPUT_DIR+"/alignments/{ref}/{sample}.sorted.bam.bai")
 	output:
-		temp(str(OUTPUT_DIR+"/alignments/{sample}.sorted.idxstats.tsv"))
+		temp(str(OUTPUT_DIR+"/alignments/{ref}/{sample}.sorted.idxstats.tsv"))
 	shell:
 		"""
 		samtools idxstats {input.bam} > {output}
 		"""
 rule calculate_coverage:
 	input:
-		bam = str(OUTPUT_DIR+"/alignments/{sample}.sorted.bam"),
-		idx = str(OUTPUT_DIR+"/alignments/{sample}.sorted.bam.bai")
+		bam = str(OUTPUT_DIR+"/alignments/{ref}/{sample}.sorted.bam"),
+		idx = str(OUTPUT_DIR+"/alignments/{ref}/{sample}.sorted.bam.bai")
 	output:
-		str(OUTPUT_DIR+"/alignments/{sample}.genomecoverage.txt")
+		str(OUTPUT_DIR+"/alignments/{ref}/{sample}.genomecoverage.txt")
 	shell:
 		"""
 		samtools view -b {input.bam}|genomeCoverageBed -ibam stdin|grep -v 'genome'| perl scripts/coverage_counter.pl > {output}	
 		"""
 rule combine_coverage_stats:
 	input:
-		cov = str(OUTPUT_DIR+"/alignments/{sample}.genomecoverage.txt"),
-		stats = str(OUTPUT_DIR+"/alignments/{sample}.sorted.idxstats.tsv")
+		cov = str(OUTPUT_DIR+"/alignments/{ref}/{sample}.genomecoverage.txt"),
+		stats = str(OUTPUT_DIR+"/alignments/{ref}/{sample}.sorted.idxstats.tsv")
 	output:
-		str(OUTPUT_DIR+"/alignments/{sample}.align.summary.txt")
+		str(OUTPUT_DIR+"/alignments/{ref}/{sample}.align.summary.txt")
 
 	shell:
 		"""
@@ -35,7 +35,7 @@ rule combine_coverage_stats:
 #Combine information for all samples into a single file
 rule all_summary:
 	input:
-		expand(OUTPUT_DIR+"/alignments/{sample}.align.summary.txt",sample=config["samples"])
+		expand(OUTPUT_DIR+"/alignments/{ref}/{sample}.align.summary.txt",sample=config["samples"], ref = ref_names)
 	output:
 		str(OUTPUT_DIR+"/summary/all_align_summary.txt")
 	params:

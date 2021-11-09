@@ -8,10 +8,16 @@
 
 # Setup
 
+import os
+
 OUTPUT_DIR = str(config["io"]["output"])
 LOCAL_DATA_DIR = str(config["io"]["data"])
 TARGETS = str(config["align"]["targets"])
 DATA_DIR = str(config["io"]["output"]+"/download")
+
+TARGETS_DIR = str(config["align"]["tar_dir"])
+ref_names = [x.replace(".fasta", "") for x in os.listdir(TARGETS_DIR)]
+#print(ref_names)
 
 # Rules
 
@@ -42,6 +48,10 @@ except KeyError as e:
 	print("using local " + un + "paired data")
 	include: "rules/local_data_"+ un +"paired.rules"
 
+r1 = lambda wildcards: LOCAL_DATA_DIR+"/"+config["samples"][wildcards.sample][0]
+print(r1)
+
+
 include: "rules/align_" + un + "paired.rules"
 
 include: "rules/process_alignment.rules"
@@ -54,7 +64,7 @@ include: "rules/plot.rules"
 
 rule all:
 	input:
-		expand(rules.pull_variants.output, sample = config['samples']),
-		rules.all_summary.output,
-		rules.all_plot.output,
+		expand(rules.pull_variants.output, sample = config["samples"], ref = ref_names)
+#		rules.all_summary.output,
+#		rules.all_plot.output,
 

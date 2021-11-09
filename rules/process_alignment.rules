@@ -2,22 +2,25 @@
 
 rule build_index:
 	input:
-		str(TARGETS)
+		str(config['align']['tar_dir']+"/{ref}.fasta")
+#		str(TARGETS)
 	output:
-		str(TARGETS+".1.bt2")
+		str(config['align']['tar_dir']+"/{ref}.fasta.1.bt2")
+#		str(TARGETS+".1.bt2")
 	threads: 20
 	shell:
 		"bowtie2-build --threads {threads} -f {input} {input}"
 
 rule process_alignment:
 	input:
-		str(OUTPUT_DIR+"/alignments/{sample}.sam")
+		str(OUTPUT_DIR+"/alignments/{ref}/{sample}.sam")
 	output:
-		bam = str(OUTPUT_DIR+"/alignments/{sample}.bam"),
-		sorted = str(OUTPUT_DIR+"/alignments/{sample}.sorted.bam"),
-		bai = str(OUTPUT_DIR+"/alignments/{sample}.sorted.bam.bai"),
+		bam = str(OUTPUT_DIR+"/alignments/{ref}/{sample}.bam"),
+		sorted = str(OUTPUT_DIR+"/alignments/{ref}/{sample}.sorted.bam"),
+		bai = str(OUTPUT_DIR+"/alignments/{ref}/{sample}.sorted.bam.bai"),
 	params:
-		target = str(TARGETS)
+                target = str(config['align']['tar_dir']+"/{ref}.fasta")		
+#		target = str(TARGETS)
 	shell:
 		"""
 		samtools view -bT {params.target} {input} > {output.bam}

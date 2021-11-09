@@ -4,11 +4,13 @@ rule align_reads:
 	input:
 		r1 = str(DATA_DIR+"/{sample}_1.fastq.gz"),
 		r2 = str(DATA_DIR+"/{sample}_2.fastq.gz"),
-		index = str(TARGETS+".1.bt2")
+		index = str(TARGETS_DIR+"/{ref}.fasta.1.bt2"),
+#		index = str(TARGETS+".1.bt2")
 	output:
-		temp(str(OUTPUT_DIR+"/alignments/{sample}.sam"))
+		temp(str(OUTPUT_DIR+"/alignments/{ref}/{sample}.sam"))
 	params:
-		index = str(TARGETS)
+		index = str(TARGETS_DIR+"/{ref}.fasta")
+#		index = str(TARGETS)
 	threads: 8
 	shell:
 		"bowtie2 -q --local -t --very-sensitive-local --threads {threads} --no-mixed --no-discordant -x {params.index} -1 {input.r1} -2 {input.r2} -S {output}"

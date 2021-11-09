@@ -2,11 +2,11 @@
 
 rule generate_bcf:
 	input:
-		str(OUTPUT_DIR+"/alignments/{sample}.sorted.bam")
+		str(OUTPUT_DIR+"/alignments/{ref}/{sample}.sorted.bam")
 	output:
-		str(OUTPUT_DIR+"/variants/{sample}.call.bcf")
+		str(OUTPUT_DIR+"/variants/{ref}/{sample}.call.bcf")
 	params:
-		pileup = str(TARGETS)
+		pileup = str(config['align']['tar_dir']+"/{ref}.fasta")
 	threads:
 		1
 	shell:
@@ -16,9 +16,9 @@ rule generate_bcf:
 
 rule filter_bcf:
 	input:
-		str(OUTPUT_DIR+"/variants/{sample}.call.bcf")
+		str(OUTPUT_DIR+"/variants/{ref}/{sample}.call.bcf")
 	output:
-		str(OUTPUT_DIR+"/variants/{sample}.filteredcall.bcf")
+		str(OUTPUT_DIR+"/variants/{ref}/{sample}.filteredcall.bcf")
 	params:
 		filter = str(config['bcf']['filter'])
 	shell:
@@ -28,9 +28,9 @@ rule filter_bcf:
 	
 rule pull_variants:
 	input:
-		str(OUTPUT_DIR+"/variants/{sample}.filteredcall.bcf")
+		str(OUTPUT_DIR+"/variants/{ref}/{sample}.filteredcall.bcf")
 	output:
-		str(OUTPUT_DIR+"/variants/{sample}_variants.tsv")
+		str(OUTPUT_DIR+"/variants/{ref}/{sample}.variants.tsv")
 	shell:
 		"""
 		bcftools query -f '%CHROM\t%POS\t%REF\t%ALT\t%TYPE\t%DP\t%MQ\n' {input} > {output}
