@@ -1,7 +1,7 @@
 io:
   # directories
   data: "/home/chgu/projects/micu/bsi/ref_meta/Axylosxidans/hisss/data"
-  output: "/home/chgu/projects/micu/bsi/ref_meta/Axylosxidans/hisss/results_scaf"
+  output: "/home/chgu/projects/micu/bsi/ref_meta/Axylosxidans/hisss/results1"
 
   # options
   download: False
@@ -9,12 +9,10 @@ io:
 
 
 align:
-  targets: "/home/chgu/projects/micu/bsi/ref_meta/Axylosxidans/hisss/ref/chr048A_S11_scaf.fasta"
-  tar_dir: "/home/chgu/projects/micu/bsi/ref_meta/Axylosxidans/hisss/ref_test"
+  tar_dir: "/home/chgu/projects/micu/bsi/ref_meta/Axylosxidans/hisss/ref1"
 
 bcf:
   filter: "DP>7&QUAL>30&MQ>14"
 
-
 samples:
-  chr048_44309: ['chr048_44309_1.fastq.gz', 'chr048_44309_2.fastq.gz']
+  chr048_44309_S68: ['chr048_44309_S68_L001_R1_001.fastq.gz', 'chr048_44309_S68_L001_R2_001.fastq.gz']

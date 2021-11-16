@@ -7,6 +7,10 @@ io:
   download: False
   paired: True
 
+
 align:
-  targets: "/home/chgu/projects/micu/bsi/ref_meta/Axylosxidans/hisss/all_ref.fasta"
+  tar_dir: "/home/chgu/projects/micu/bsi/ref_meta/Axylosxidans/hisss/ref_test"
+
+bcf:
+  filter: "DP>7&QUAL>30&MQ>14"
 

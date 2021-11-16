@@ -1,0 +1,18 @@
+io:
+  # directories
+  data: "/home/chgu/projects/micu/bsi/ref_meta/Bacteroides/hisss/data"
+  output: "/home/chgu/projects/micu/bsi/ref_meta/Bacteroides/hisss/results"
+
+  # options
+  download: False
+  paired: True
+
+
+align:
+  tar_dir: "/home/chgu/projects/micu/bsi/ref_meta/Bacteroides/hisss/ref"
+
+bcf:
+  filter: "DP>7&QUAL>30&MQ>14"
+
+samples:
+  chr014_44230_S24: ['chr014_44230_S24_L001_R1_001.fastq.gz', 'chr014_44230_S24_L001_R2_001.fastq.gz']

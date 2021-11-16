@@ -12,7 +12,6 @@ import os
 
 OUTPUT_DIR = str(config["io"]["output"])
 LOCAL_DATA_DIR = str(config["io"]["data"])
-TARGETS = str(config["align"]["targets"])
 DATA_DIR = str(config["io"]["output"]+"/download")
 
 TARGETS_DIR = str(config["align"]["tar_dir"])
@@ -47,10 +46,6 @@ except KeyError as e:
 	print(str(e) + "not found.")
 	print("using local " + un + "paired data")
 	include: "rules/local_data_"+ un +"paired.rules"
-
-r1 = lambda wildcards: LOCAL_DATA_DIR+"/"+config["samples"][wildcards.sample][0]
-print(r1)
-
 
 include: "rules/align_" + un + "paired.rules"
 

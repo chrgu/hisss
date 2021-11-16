@@ -1,0 +1,18 @@
+io:
+  # directories
+  data: "/home/chgu/projects/micu/bsi/ref_meta/Mmorganii/hisss/data"
+  output: "/home/chgu/projects/micu/bsi/ref_meta/Mmorganii/hisss/results"
+
+  # options
+  download: False
+  paired: True
+
+
+align:
+  tar_dir: "/home/chgu/projects/micu/bsi/ref_meta/Mmorganii/hisss/ref"
+
+bcf:
+  filter: "DP>7&QUAL>30&MQ>14"
+
+samples:
+  SEP025_43515_S149: ['SEP025_43515_S149_L001_R1_001.fastq.gz', 'SEP025_43515_S149_L001_R2_001.fastq.gz']

@@ -1,0 +1,20 @@
+io:
+  # directories
+  data: "/home/chgu/projects/micu/bsi/ref_meta/Smarcescens/hisss/data"
+  output: "/home/chgu/projects/micu/bsi/ref_meta/Smarcescens/hisss/results"
+
+  # options
+  download: False
+  paired: True
+
+
+align:
+  tar_dir: "/home/chgu/projects/micu/bsi/ref_meta/Smarcescens/hisss/ref"
+
+bcf:
+  filter: "DP>7&QUAL>30&MQ>14"
+
+samples:
+  chr033_44280_S51: ['chr033_44280_S51_L001_R1_001.fastq.gz', 'chr033_44280_S51_L001_R2_001.fastq.gz']
+  chr033_44303_S52: ['chr033_44303_S52_L001_R1_001.fastq.gz', 'chr033_44303_S52_L001_R2_001.fastq.gz']
+  SEP028_43559_S152: ['SEP028_43559_S152_L001_R1_001.fastq.gz', 'SEP028_43559_S152_L001_R2_001.fastq.gz']

@@ -1,0 +1,33 @@
+io:
+  # directories
+  data: "/home/chgu/projects/micu/bsi/ref_meta/Efaecalis/hisss/data"
+  output: "/home/chgu/projects/micu/bsi/ref_meta/Efaecalis/hisss/results"
+
+  # options
+  download: False
+  paired: True
+
+
+align:
+  tar_dir: "/home/chgu/projects/micu/bsi/ref_meta/Efaecalis/hisss/ref"
+
+bcf:
+  filter: "DP>7&QUAL>30&MQ>14"
+
+samples:
+  chr012_44230_S15: ['chr012_44230_S15_L001_R1_001.fastq.gz', 'chr012_44230_S15_L001_R2_001.fastq.gz']
+  chr012_44259_S17: ['chr012_44259_S17_L001_R1_001.fastq.gz', 'chr012_44259_S17_L001_R2_001.fastq.gz']
+  CORE0413_44172_S130: ['CORE0413_44172_S130_L001_R1_001.fastq.gz', 'CORE0413_44172_S130_L001_R2_001.fastq.gz']
+  CORE0413_44158_S128: ['CORE0413_44158_S128_L001_R1_001.fastq.gz', 'CORE0413_44158_S128_L001_R2_001.fastq.gz']
+  CORE0413_44160_S129: ['CORE0413_44160_S129_L001_R1_001.fastq.gz', 'CORE0413_44160_S129_L001_R2_001.fastq.gz']
+  chr012_44295_S21: ['chr012_44295_S21_L001_R1_001.fastq.gz', 'chr012_44295_S21_L001_R2_001.fastq.gz']
+  chr048_44309_S68: ['chr048_44309_S68_L001_R1_001.fastq.gz', 'chr048_44309_S68_L001_R2_001.fastq.gz']
+  chr045_44301_S64: ['chr045_44301_S64_L001_R1_001.fastq.gz', 'chr045_44301_S64_L001_R2_001.fastq.gz']
+  chr012_44242_S16: ['chr012_44242_S16_L001_R1_001.fastq.gz', 'chr012_44242_S16_L001_R2_001.fastq.gz']
+  CORE0413_44155_S127: ['CORE0413_44155_S127_L001_R1_001.fastq.gz', 'CORE0413_44155_S127_L001_R2_001.fastq.gz']
+  CORE0413_44209_S131: ['CORE0413_44209_S131_L001_R1_001.fastq.gz', 'CORE0413_44209_S131_L001_R2_001.fastq.gz']
+  chr012_44266_S18: ['chr012_44266_S18_L001_R1_001.fastq.gz', 'chr012_44266_S18_L001_R2_001.fastq.gz']
+  CORE0413_44173_S201: ['CORE0413_44173_S201_L001_R1_001.fastq.gz', 'CORE0413_44173_S201_L001_R2_001.fastq.gz']
+  chr012_44285_S20: ['chr012_44285_S20_L001_R1_001.fastq.gz', 'chr012_44285_S20_L001_R2_001.fastq.gz']
+  chr012_44278_S19: ['chr012_44278_S19_L001_R1_001.fastq.gz', 'chr012_44278_S19_L001_R2_001.fastq.gz']
+  CORE0413_44169_S200: ['CORE0413_44169_S200_L001_R1_001.fastq.gz', 'CORE0413_44169_S200_L001_R2_001.fastq.gz']

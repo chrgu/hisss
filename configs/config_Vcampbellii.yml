@@ -1,0 +1,18 @@
+io:
+  # directories
+  data: "/home/chgu/projects/micu/bsi/ref_meta/Vcampbellii/hisss/data"
+  output: "/home/chgu/projects/micu/bsi/ref_meta/Vcampbellii/hisss/results"
+
+  # options
+  download: False
+  paired: True
+
+
+align:
+  tar_dir: "/home/chgu/projects/micu/bsi/ref_meta/Vcampbellii/hisss/ref"
+
+bcf:
+  filter: "DP>7&QUAL>30&MQ>14"
+
+samples:
+  vibrio_control_S205: ['vibrio_control_S205_L001_R1_001.fastq.gz', 'vibrio_control_S205_L001_R2_001.fastq.gz']

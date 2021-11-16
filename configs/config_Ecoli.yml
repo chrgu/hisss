@@ -1,0 +1,20 @@
+io:
+  # directories
+  data: "/home/chgu/projects/micu/bsi/ref_meta/Ecoli/hisss/data"
+  output: "/home/chgu/projects/micu/bsi/ref_meta/Ecoli/hisss/results"
+
+  # options
+  download: False
+  paired: True
+
+
+align:
+  tar_dir: "/home/chgu/projects/micu/bsi/ref_meta/Ecoli/hisss/ref"
+
+bcf:
+  filter: "DP>7&QUAL>30&MQ>14"
+
+samples:
+  SEP031_43691_S155: ['SEP031_43691_S155_L001_R1_001.fastq.gz', 'SEP031_43691_S155_L001_R2_001.fastq.gz']
+  SEP030_43616_S154: ['SEP030_43616_S154_L001_R1_001.fastq.gz', 'SEP030_43616_S154_L001_R2_001.fastq.gz']
+  CORE0396_44148_S126: ['CORE0396_44148_S126_L001_R1_001.fastq.gz', 'CORE0396_44148_S126_L001_R2_001.fastq.gz']

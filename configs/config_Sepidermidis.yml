@@ -1,0 +1,36 @@
+io:
+  # directories
+  data: "/home/chgu/projects/micu/bsi/ref_meta/Sepidermidis/hisss/data"
+  output: "/home/chgu/projects/micu/bsi/ref_meta/Sepidermidis/hisss/results"
+
+  # options
+  download: False
+  paired: True
+
+
+align:
+  tar_dir: "/home/chgu/projects/micu/bsi/ref_meta/Sepidermidis/hisss/ref"
+
+bcf:
+  filter: "DP>7&QUAL>30&MQ>14"
+
+samples:
+  chr052_44336_S186: ['chr052_44336_S186_L001_R1_001.fastq.gz', 'chr052_44336_S186_L001_R2_001.fastq.gz']
+  SEP042_43864_S161: ['SEP042_43864_S161_L001_R1_001.fastq.gz', 'SEP042_43864_S161_L001_R2_001.fastq.gz']
+  chr019_44287_S34: ['chr019_44287_S34_L001_R1_001.fastq.gz', 'chr019_44287_S34_L001_R2_001.fastq.gz']
+  chr019_44281_S33: ['chr019_44281_S33_L001_R1_001.fastq.gz', 'chr019_44281_S33_L001_R2_001.fastq.gz']
+  chr036_44285_S54: ['chr036_44285_S54_L001_R1_001.fastq.gz', 'chr036_44285_S54_L001_R2_001.fastq.gz']
+  chr036_44308_S55: ['chr036_44308_S55_L001_R1_001.fastq.gz', 'chr036_44308_S55_L001_R2_001.fastq.gz']
+  CORE0363_44134_S113: ['CORE0363_44134_S113_L001_R1_001.fastq.gz', 'CORE0363_44134_S113_L001_R2_001.fastq.gz']
+  CORE0413_44172_S130: ['CORE0413_44172_S130_L001_R1_001.fastq.gz', 'CORE0413_44172_S130_L001_R2_001.fastq.gz']
+  chr026blue_44285_S43: ['chr026blue_44285_S43_L001_R1_001.fastq.gz', 'chr026blue_44285_S43_L001_R2_001.fastq.gz']
+  CORE0413_44169_S200: ['CORE0413_44169_S200_L001_R1_001.fastq.gz', 'CORE0413_44169_S200_L001_R2_001.fastq.gz']
+  CORE0413_44158_S128: ['CORE0413_44158_S128_L001_R1_001.fastq.gz', 'CORE0413_44158_S128_L001_R2_001.fastq.gz']
+  chr026purp_44286_S44: ['chr026purp_44286_S44_L001_R1_001.fastq.gz', 'chr026purp_44286_S44_L001_R2_001.fastq.gz']
+  chr052_44323_S73: ['chr052_44323_S73_L001_R1_001.fastq.gz', 'chr052_44323_S73_L001_R2_001.fastq.gz']
+  chr026_44282_S194: ['chr026_44282_S194_L001_R1_001.fastq.gz', 'chr026_44282_S194_L001_R2_001.fastq.gz']
+  CORE0413_44209_S131: ['CORE0413_44209_S131_L001_R1_001.fastq.gz', 'CORE0413_44209_S131_L001_R2_001.fastq.gz']
+  chr021_44271_S37: ['chr021_44271_S37_L001_R1_001.fastq.gz', 'chr021_44271_S37_L001_R2_001.fastq.gz']
+  CORE0413_44173_S201: ['CORE0413_44173_S201_L001_R1_001.fastq.gz', 'CORE0413_44173_S201_L001_R2_001.fastq.gz']
+  CORE0413_44155_S127: ['CORE0413_44155_S127_L001_R1_001.fastq.gz', 'CORE0413_44155_S127_L001_R2_001.fastq.gz']
+  CORE0413_44160_S129: ['CORE0413_44160_S129_L001_R1_001.fastq.gz', 'CORE0413_44160_S129_L001_R2_001.fastq.gz']

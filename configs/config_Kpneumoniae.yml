@@ -1,0 +1,26 @@
+io:
+  # directories
+  data: "/home/chgu/projects/micu/bsi/ref_meta/Kpneumoniae/hisss/data"
+  output: "/home/chgu/projects/micu/bsi/ref_meta/Kpneumoniae/hisss/results"
+
+  # options
+  download: False
+  paired: True
+
+
+align:
+  tar_dir: "/home/chgu/projects/micu/bsi/ref_meta/Kpneumoniae/hisss/ref"
+
+bcf:
+  filter: "DP>7&QUAL>30&MQ>14"
+
+samples:
+  CORE0341_44123_S103: ['CORE0341_44123_S103_L001_R1_001.fastq.gz', 'CORE0341_44123_S103_L001_R2_001.fastq.gz']
+  CORE0341_44146_S109: ['CORE0341_44146_S109_L001_R1_001.fastq.gz', 'CORE0341_44146_S109_L001_R2_001.fastq.gz']
+  CORE0341_44137_S107: ['CORE0341_44137_S107_L001_R1_001.fastq.gz', 'CORE0341_44137_S107_L001_R2_001.fastq.gz']
+  chr053_44344_S156: ['chr053_44344_S156_L001_R1_001.fastq.gz', 'chr053_44344_S156_L001_R2_001.fastq.gz']
+  CORE0341_44144_S108: ['CORE0341_44144_S108_L001_R1_001.fastq.gz', 'CORE0341_44144_S108_L001_R2_001.fastq.gz']
+  CORE0341_44125_S104: ['CORE0341_44125_S104_L001_R1_001.fastq.gz', 'CORE0341_44125_S104_L001_R2_001.fastq.gz']
+  CORE0341_44130_S106: ['CORE0341_44130_S106_L001_R1_001.fastq.gz', 'CORE0341_44130_S106_L001_R2_001.fastq.gz']
+  CORE0341_44127_S105: ['CORE0341_44127_S105_L001_R1_001.fastq.gz', 'CORE0341_44127_S105_L001_R2_001.fastq.gz']
+  chr053_44348_S184: ['chr053_44348_S184_L001_R1_001.fastq.gz', 'chr053_44348_S184_L001_R2_001.fastq.gz']

@@ -1,0 +1,22 @@
+io:
+  # directories
+  data: "/home/chgu/projects/micu/bsi/ref_meta/Pmirabilis/hisss/data"
+  output: "/home/chgu/projects/micu/bsi/ref_meta/Pmirabilis/hisss/results"
+
+  # options
+  download: False
+  paired: True
+
+
+align:
+  tar_dir: "/home/chgu/projects/micu/bsi/ref_meta/Pmirabilis/hisss/ref"
+
+bcf:
+  filter: "DP>7&QUAL>30&MQ>14"
+
+samples:
+  chr018_44291_S31: ['chr018_44291_S31_L001_R1_001.fastq.gz', 'chr018_44291_S31_L001_R2_001.fastq.gz']
+  chr018_44281_S29: ['chr018_44281_S29_L001_R1_001.fastq.gz', 'chr018_44281_S29_L001_R2_001.fastq.gz']
+  chr018_44271_S28: ['chr018_44271_S28_L001_R1_001.fastq.gz', 'chr018_44271_S28_L001_R2_001.fastq.gz']
+  chr018_44288_S30: ['chr018_44288_S30_L001_R1_001.fastq.gz', 'chr018_44288_S30_L001_R2_001.fastq.gz']
+  chr018_44299_S32: ['chr018_44299_S32_L001_R1_001.fastq.gz', 'chr018_44299_S32_L001_R2_001.fastq.gz']

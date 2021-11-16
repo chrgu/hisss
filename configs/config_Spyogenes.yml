@@ -1,0 +1,18 @@
+io:
+  # directories
+  data: "/home/chgu/projects/micu/bsi/ref_meta/Spyogenes/hisss/data"
+  output: "/home/chgu/projects/micu/bsi/ref_meta/Spyogenes/hisss/results"
+
+  # options
+  download: False
+  paired: True
+
+
+align:
+  tar_dir: "/home/chgu/projects/micu/bsi/ref_meta/Spyogenes/hisss/ref"
+
+bcf:
+  filter: "DP>7&QUAL>30&MQ>14"
+
+samples:
+  SEP028_43559_S152: ['SEP028_43559_S152_L001_R1_001.fastq.gz', 'SEP028_43559_S152_L001_R2_001.fastq.gz']
