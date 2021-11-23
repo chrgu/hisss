@@ -15,4 +15,4 @@ bcf:
   filter: "DP>7&QUAL>30&MQ>14"
 
 samples:
-  vibrio_control_S205: ['vibrio_control_S205_L001_R1_001.fastq.gz', 'vibrio_control_S205_L001_R2_001.fastq.gz']
+  vibrio_control_na: ['vibrio_control_na_1.fastq.gz', 'vibrio_control_na_2.fastq.gz']

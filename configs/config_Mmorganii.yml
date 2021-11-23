@@ -15,4 +15,4 @@ bcf:
   filter: "DP>7&QUAL>30&MQ>14"
 
 samples:
-  SEP025_43515_S149: ['SEP025_43515_S149_L001_R1_001.fastq.gz', 'SEP025_43515_S149_L001_R2_001.fastq.gz']
+  SEP025_43515: ['SEP025_43515_1.fastq.gz', 'SEP025_43515_2.fastq.gz']

@@ -15,8 +15,8 @@ bcf:
   filter: "DP>7&QUAL>30&MQ>14"
 
 samples:
-  chr018_44291_S31: ['chr018_44291_S31_L001_R1_001.fastq.gz', 'chr018_44291_S31_L001_R2_001.fastq.gz']
-  chr018_44281_S29: ['chr018_44281_S29_L001_R1_001.fastq.gz', 'chr018_44281_S29_L001_R2_001.fastq.gz']
-  chr018_44271_S28: ['chr018_44271_S28_L001_R1_001.fastq.gz', 'chr018_44271_S28_L001_R2_001.fastq.gz']
-  chr018_44288_S30: ['chr018_44288_S30_L001_R1_001.fastq.gz', 'chr018_44288_S30_L001_R2_001.fastq.gz']
-  chr018_44299_S32: ['chr018_44299_S32_L001_R1_001.fastq.gz', 'chr018_44299_S32_L001_R2_001.fastq.gz']
+  chr018_44288: ['chr018_44288_1.fastq.gz', 'chr018_44288_2.fastq.gz']
+  chr018_44299: ['chr018_44299_1.fastq.gz', 'chr018_44299_2.fastq.gz']
+  chr018_44291: ['chr018_44291_1.fastq.gz', 'chr018_44291_2.fastq.gz']
+  chr018_44281: ['chr018_44281_1.fastq.gz', 'chr018_44281_2.fastq.gz']
+  chr018_44271: ['chr018_44271_1.fastq.gz', 'chr018_44271_2.fastq.gz']

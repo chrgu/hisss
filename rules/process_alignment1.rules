@@ -1,21 +1,10 @@
 #-*- mode: Snakemake -*-
 
-rule symlink_ref:
+rule build_index:
 	input:
 		str(TARGETS_DIR+"/{ref}.fasta")
 	output:
-		str(INDEX_DIR+"/{ref}.fasta")
-	shell:
-		"""
-		ln -sr {input} {output}
-		"""
-
-rule build_index:
-	input:
-		str(INDEX_DIR+"/{ref}.fasta")
-#		str(TARGETS_DIR+"/{ref}.fasta")
-	output:
-		str(INDEX_DIR+"/{ref}.fasta.1.bt2")
+		str(TARGETS_DIR+"/{ref}.fasta.1.bt2")
 #		str(config['align']['tar_dir']+"/{ref}.fasta.1.bt2")
 	threads: 20
 	shell:
@@ -29,11 +18,12 @@ rule process_alignment:
 		sorted = temp(str(OUTPUT_DIR+"/alignments/{ref}/{sample}.sorted.bam")),
 		bai = temp(str(OUTPUT_DIR+"/alignments/{ref}/{sample}.sorted.bam.bai")),
 	params:
-#		target = str(TARGETS_DIR+"/{ref}.fasta")		
-		target = str(INDEX_DIR+"/{ref}.fasta")
+                target = str(TARGETS_DIR+"/{ref}.fasta")		
 	shell:
 		"""
 		samtools view -bT {params.target} {input} > {output.bam}
 		samtools sort -o {output.sorted} {output.bam}
 		samtools index {output.sorted} {output.bai}
 		"""
+
+

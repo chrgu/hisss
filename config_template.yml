@@ -9,7 +9,7 @@ io:
 
 
 align:
-  tar_dir: "/home/chgu/projects/micu/bsi/ref_meta/Axylosxidans/hisss/ref_test"
+  tar_dir: "/home/chgu/projects/micu/bsi/ref_meta/Axylosxidans/hisss/ref"
 
 bcf:
   filter: "DP>7&QUAL>30&MQ>14"

@@ -13,6 +13,7 @@ import os
 OUTPUT_DIR = str(config["io"]["output"])
 LOCAL_DATA_DIR = str(config["io"]["data"])
 DATA_DIR = str(config["io"]["output"]+"/download")
+INDEX_DIR = str(config["io"]["output"]+"/index")
 
 TARGETS_DIR = str(config["align"]["tar_dir"])
 ref_names = [x.replace(".fasta", "") for x in os.listdir(TARGETS_DIR)]

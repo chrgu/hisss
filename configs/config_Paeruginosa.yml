@@ -15,7 +15,7 @@ bcf:
   filter: "DP>7&QUAL>30&MQ>14"
 
 samples:
-  chr052_44336_S186: ['chr052_44336_S186_L001_R1_001.fastq.gz', 'chr052_44336_S186_L001_R2_001.fastq.gz']
-  chr047_44315_S67: ['chr047_44315_S67_L001_R1_001.fastq.gz', 'chr047_44315_S67_L001_R2_001.fastq.gz']
-  chr055_44343_S172: ['chr055_44343_S172_L001_R1_001.fastq.gz', 'chr055_44343_S172_L001_R2_001.fastq.gz']
-  chr052_44323_S73: ['chr052_44323_S73_L001_R1_001.fastq.gz', 'chr052_44323_S73_L001_R2_001.fastq.gz']
+  chr047_44315: ['chr047_44315_1.fastq.gz', 'chr047_44315_2.fastq.gz']
+  chr055_44343: ['chr055_44343_1.fastq.gz', 'chr055_44343_2.fastq.gz']
+  chr052_44336: ['chr052_44336_1.fastq.gz', 'chr052_44336_2.fastq.gz']
+  chr052_44323: ['chr052_44323_1.fastq.gz', 'chr052_44323_2.fastq.gz']
